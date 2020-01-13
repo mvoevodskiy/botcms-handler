@@ -13,7 +13,15 @@ const MVTools = require('mvtools');
  *
  */
 class BotCMSHandler {
+    static exportConfig = {};
     config = {};
+    defaults = {
+        botcms: {
+            db: {
+                name: 'botcms',
+            }
+        }
+    };
 
     constructor(App, config = {}) {
         this.MT = new MVTools;
@@ -27,7 +35,7 @@ class BotCMSHandler {
         return Promise.resolve()
             .then(() => {
                 let config = this.config.botcms || {};
-                config.db = this.MT.mergeRecursive(this.App.config.db, config.db);
+                // config.db = this.MT.mergeRecursive(this.App.config.db, config.db);
                 this.Bot = new BotCMS(config);
             })
             .then(() => this.loadSchema(this.config.schemaFiles)
@@ -39,12 +47,11 @@ class BotCMSHandler {
     }
 
     async loadConfig (config) {
-        this.config = this.MT.mergeRecursive(this.config, config);
+        this.config = this.MT.mergeRecursive(this.defaults, this.config, config);
     }
 
     async loadSchema (schemas) {
-        // let currentDir = __dirname + '/../';
-        // console.log('BOT HANDLER. LOAD SCHEMA. CURRENT DIR: ' + currentDir);
+        // console.log('BOT HANDLER. LOAD SCHEMA. SCHEMAS: ', schemas);
         if (Array.isArray(schemas)) {
             for (let schema of schemas) {
                 console.log('BOT HANDLER. LOAD SCHEMA. SCHEMA: ', schema);
