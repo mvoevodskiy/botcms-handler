@@ -54,7 +54,7 @@ class BotCMSHandler {
         // console.log('BOT HANDLER. LOAD SCHEMA. SCHEMAS: ', schemas);
         if (Array.isArray(schemas)) {
             for (let schema of schemas) {
-                console.log('BOT HANDLER. LOAD SCHEMA. SCHEMA: ', schema);
+                // console.log('BOT HANDLER. LOAD SCHEMA. SCHEMA: ', schema);
                 await this.Bot.loadSchema(schema);
             }
         } else {
