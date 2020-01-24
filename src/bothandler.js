@@ -38,16 +38,18 @@ class BotCMSHandler {
                 // config.db = this.MT.mergeRecursive(this.App.config.db, config.db);
                 this.Bot = new BotCMS(config);
             })
-            .then(() => this.loadSchema(this.config.schemaFiles)
-            .then(() => this.Bot.init())
-            .then(async () => await this.Bot.launch()));
-            // .then(() => this.Bot.loadSchema('./overload.yml'))
-            // .then(() => console.log(this.Bot.Scripts.extract('c')))
-            // .then(() => this.TG = this.Bot.bridges.tg);
+            .then(() => this.loadSchema(this.config.schemaFiles));
     }
 
     async loadConfig (config) {
         this.config = this.MT.mergeRecursive(this.defaults, this.config, config);
+    }
+
+    async initFinish () {
+        if (!this.MT.empty(this.App.DB)) {
+            this.Bot.DB = this.App.DB;
+        }
+        this.Bot.init().then(async () => await this.Bot.launch());
     }
 
     async loadSchema (schemas) {
