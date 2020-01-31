@@ -1,5 +1,5 @@
 {
-  "name": "botcms-handler",
+  "name": "mvl-botcms-handler",
   "version": "0.0.2",
   "description": "",
   "main": "src/bothandler.js",
