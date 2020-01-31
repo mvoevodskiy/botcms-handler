@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botcms": "git+https://github.com/mvoevodskiy/BotCMS.git",
-    "mvtools": "git+https://github.com/mvoevodskiy/mvtools.git"
+    "botcms": "0.0.3",
+    "mvtools": "0.0.2"
   }
 }
