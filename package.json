@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botcms": "^1.0.0",
-    "mvtools": "^1.0.1"
+    "botcms": "^1.0.29",
+    "mvtools": "^1.0.17"
+  },
+  "devDependencies": {
+    "mvloader": "^1.0.7"
   }
 }
