@@ -1,6 +1,6 @@
 {
   "name": "mvl-botcms-handler",
-  "version": "1.1.0-alpha.8",
+  "version": "1.1.0",
   "description": "",
   "main": "src/bothandler.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botcms": "^1.1.0-alpha.8",
+    "botcms": "^1.1.0",
     "mvtools": "^1.0.18"
   },
   "devDependencies": {
